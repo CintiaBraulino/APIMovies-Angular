@@ -1,0 +1,17 @@
+body {
+  background-image: url("https://images.alphacoders.com/100/thumb-1920-1005214.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 91vh;
+}
+.container,
+.row.justify-content-center.align-items-center {
+  height: 100%;
+  align-content: center;
+}
+.card {
+  height: 370px;
+  margin-top: 60px;
+  max-width: 30rem;
+}

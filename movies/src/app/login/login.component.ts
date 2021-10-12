@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestLogin } from './../resources/models/RequestLogin';
+import { AuthService } from './../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  login = {
+    email : '',
+    password:''
+  };
+  
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    
+  }
+
+  async onSubmit(){
+    try{
+      const result = await this.authService.login(this.login);
+      console.log(`Login efetuado: ${result}`);
+
+      this.router.navigate(['HomeAdm']);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
 }
