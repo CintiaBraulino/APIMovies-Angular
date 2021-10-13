@@ -1,9 +1,91 @@
-<p>home-adm works!</p>
-<body>
-  <!--NAVBAR-->
-  <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
-  <div>
-    <a (click)="logout()">(Logout)</a>
-  </div>
-</body>
+<!DOCTYPE html>
+<html lang="pt_br">
+  <body>
+    <!--NAVBAR-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/cine.png" height="75" />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <a
+              class="navbar-brand"
+              routerLinkActive="active"
+              (click)="logout()"
+            >
+              <button class="btn btn-outline-warning" type="submit">
+                Logout
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!--NAV-->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Ativo</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Dropdown</a
+          >
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Ação</a>
+            <a class="dropdown-item" href="#">Outra ação</a>
+            <a class="dropdown-item" href="#">Algo mais aqui</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Link isolado</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Desativado</a>
+        </li>
+      </ul>
+    </header>
+
+    <!--CARD-->
+    <div class="card">
+      <div class="card-body text-warning">
+        <h5 class="card-title">Bem Vindo!!</h5>
+        <p class="card-text">
+          Aqui é sua area de modificação, você pode incluir, excluir, ou
+          modificar filmes e categorias. Você tambem pode gerenciar os usuarios
+          da sua plataforma!!
+        </p>
+      </div>
+
+      <img
+        class="card-img-bottom"
+        src="assets/logoADM.jpg"
+        alt="Imagem de capa do card"
+      />
+    </div>
+
+    <router-outlet></router-outlet>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -16,6 +16,8 @@ import { AuthService } from './services/auth.service';
 import { HomeAdmComponent } from './home-adm/home-adm.component';
 
 import { httpInterceptorProviders } from './http-interceptors';
+import { ListMoviesComponent } from './home/list-movies/list-movies.component';
+import { MovieService } from './services/movie.service';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { httpInterceptorProviders } from './http-interceptors';
     NavbarComponent,
     CarouselComponent,
     CardComponent,
-    HomeAdmComponent
+    HomeAdmComponent,
+    ListMoviesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { httpInterceptorProviders } from './http-interceptors';
     BrowserAnimationsModule,
     MatToolbarModule,
   ],
-  providers: [AuthService, httpInterceptorProviders],
+  providers: [AuthService, httpInterceptorProviders, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
