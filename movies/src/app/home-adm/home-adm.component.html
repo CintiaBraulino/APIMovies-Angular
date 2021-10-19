@@ -22,33 +22,38 @@
           </div>
         </div>
       </nav>
+
       <!--NAV-->
-      <ul class="nav nav-pills">
+      <ul class="h-75 w-100 p-3 nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Ativo</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Dropdown</a
-          >
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Ação</a>
-            <a class="dropdown-item" href="#">Outra ação</a>
-            <a class="dropdown-item" href="#">Algo mais aqui</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Link isolado</a>
-          </div>
+          <a class="nav-link" [routerLink]="['/User']">
+            <button
+              type="button"
+              class="btn btn-outline-warning btn-lg btn-block"
+            >
+              Gerenciar Usuarios
+            </button>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" [routerLink]="['/Movie']">
+            <button
+              type="button"
+              class="btn btn-outline-warning btn-lg btn-block"
+            >
+              Gerenciar Filmes
+            </button>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Desativado</a>
+          <a class="nav-link" [routerLink]="['/Category']">
+            <button
+              type="button"
+              class="btn btn-outline-warning btn-lg btn-block"
+            >
+              Gerenciar Gêneros
+            </button>
+          </a>
         </li>
       </ul>
     </header>

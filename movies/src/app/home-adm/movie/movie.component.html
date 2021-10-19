@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!--NAVBAR-->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/HomeAdm']">
+          <img src="assets/cine.png" height="75" />
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <div class="float-left">
+          <h5>MOVIES</h5>
+        </div>
+        <div class="float-right">
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            [routerLink]="['/NewMovie']"
+          >
+            New Movie
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>MOVIE</th>
+              <th>IMAGE</th>
+              <th>SYNOPSIS</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let movies of movies$ | async; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ movies.title }}</td>
+              <td>
+                <div class="container">
+                  <img
+                    src="{{ movies.image }}"
+                    class="img-thumbnail"
+                    alt="Cinque Terre"
+                    width="250"
+                    height="200"
+                  />
+                </div>
+              </td>
+              <td>{{ movies.synopsis }}</td>
+              <td>
+                <span class="float-right">
+                  <button
+                    class="btn btn-outline-warning mb-1 btn-sm"
+                    [routerLink]="['/SaveMovie/' + movies.id]"
+                  >
+                    Details
+                  </button>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="float-right">
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          [routerLink]="['/HomeAdm']"
+        >
+          BACK
+        </button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </body>
+</html>
