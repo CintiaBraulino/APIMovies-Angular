@@ -1,19 +1,29 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="assets/cine.png" height="75" />
-      </a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-        <a
-          class="navbar-brand"
-          routerLinkActive="active"
-          [routerLink]="['/Login']"
-        >
-          <button class="btn btn-outline-warning" type="submit">Login</button>
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+    <img src="assets/movies.svg" height="200" />
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="h-75 w-100 p-3 nav justify-content-center">
+      <li class="nav-item">
+        <a id="menu" class="nav-link" [routerLink]="['/ListMovies']">
+          <button type="button" class="btn-lg btn-block">List Movies</button>
         </a>
-      </div>
-    </div>
-  </nav>
-</header>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/GenreMovies']">
+          <button type="button" class="btn-lg btn-block">
+            Movies by Genres
+          </button>
+        </a>
+      </li>
+    </ul>
+    <a
+      class="navbar-brand justify-content-end"
+      routerLinkActive="active"
+      [routerLink]="['/Login']"
+    >
+      <button type="submit" class="btn-lg btn-block">Login</button>
+    </a>
+  </div>
+</nav>

@@ -19,6 +19,9 @@ export class CategoryService {
     listar(){
       return this.http.get<Category[]>(`${this.useUrl}/category`);
     }
+    listCategory(){
+      return this.http.get<Category[]>(`${this.useUrl}/category`);
+    }
 
 
     async create(account:any){

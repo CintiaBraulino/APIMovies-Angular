@@ -10,6 +10,7 @@ import { SaveMovieComponent } from "./home-adm/movie/save-movie/save-movie.compo
 import { NewUserComponent } from "./home-adm/user/new-user/new-user.component";
 import { SaveUserComponent } from "./home-adm/user/save-user/save-user.component";
 import { UserComponent } from "./home-adm/user/user.component";
+import { GenreMoviesComponent } from "./home/genre-movies/genre-movies.component";
 import { HomeComponent } from './home/home.component';
 import { ListMoviesComponent } from "./home/list-movies/list-movies.component";
 import { LoginComponent } from "./login/login.component";
@@ -22,6 +23,7 @@ const routes: Routes= [
   { path:'', component: HomeComponent },
   { path:'Login', component: LoginComponent },
   { path:'ListMovies', component: ListMoviesComponent},
+  { path: 'GenreMovies', component: GenreMoviesComponent},
   { path:'HomeAdm', component: HomeAdmComponent, canActivate:[AuthGuard] },
   { path:'Movie', component: MovieComponent},
   { path: 'User', component: UserComponent},

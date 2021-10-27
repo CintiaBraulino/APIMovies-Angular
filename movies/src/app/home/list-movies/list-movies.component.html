@@ -1,48 +1,41 @@
-<body>
-  <!--NAVBAR-->
-  <app-navbar></app-navbar>
+<!--NAVBAR-->
+<app-navbar></app-navbar>
 
-  <form class="d-flex">
-    <input
-      class="form-control me-2"
-      type="search"
-      placeholder="Search"
-      aria-label="Search"
-    />
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
+<nav class="navbar">
+  <input
+    class="form-control"
+    type="text"
+    name="title"
+    [(ngModel)]="title"
+    (input)="Search()"
+    placeholder="Enter Title to search"
+  />
+</nav>
 
-  <div class="row">
-    <div *ngFor="let movie of movie" class="col-md-4 mt-4">
-      <div class="card-movie-container">
-        <div class="card-body">
-          <img src="{{ movie.image }}" class="card-img-top" alt="..." />
-          <h5 class="card-title">{{ movie.title }}</h5>
-          <p class="card-text text-warning">{{ movie.synopsis }}</p>
-        </div>
-        <div class="card-footer">
-          <div class="row">
-            <div class="col">
-              <a class="btn btn-sm btn-dark mr-6">{{ movie.releaseDate }}</a>
-              <a class="btn btn-sm btn-danger mr-6">{{
-                movie.language.name
-              }}</a>
-              <a class="btn btn-sm btn-danger mr-6">{{ movie.language.tag }}</a>
-              <a class="btn btn-sm btn-primary mr-6">{{
-                movie.category.name
-              }}</a>
-              <a class="btn btn-sm btn-primary mr-6">{{
-                movie.category.tag
-              }}</a>
-            </div>
-            <div class="col text-right">
-              <h5>{{ movie.duration }}⌛</h5>
-            </div>
+<div class="row">
+  <div *ngFor="let movie of movie" class="col-md-3 mt-4">
+    <div class="card-movie-container border border-success">
+      <div class="card-body">
+        <img src="{{ movie.image }}" class="card-img-top" alt="..." />
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">{{ movie.synopsis }}</p>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+          <div class="col">
+            <a class="btn btn-sm btn-dark mr-6">{{ movie.releaseDate }}</a>
+            <a class="btn btn-sm btn-danger mr-6">{{ movie.language.name }}</a>
+            <a class="btn btn-sm btn-danger mr-6">{{ movie.language.tag }}</a>
+            <a class="btn btn-sm btn-primary mr-6">{{ movie.category.name }}</a>
+            <a class="btn btn-sm btn-primary mr-6">{{ movie.category.tag }}</a>
+          </div>
+          <div class="col text-right">
+            <h5>{{ movie.duration }}⌛</h5>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <router-outlet></router-outlet>
-</body>
+<router-outlet></router-outlet>

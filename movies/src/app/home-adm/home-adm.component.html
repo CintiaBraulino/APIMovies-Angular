@@ -1,96 +1,59 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-  <body>
-    <!--NAVBAR-->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="assets/cine.png" height="75" />
-          </a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            <a
-              class="navbar-brand"
-              routerLinkActive="active"
-              (click)="logout()"
-            >
-              <button class="btn btn-outline-warning" type="submit">
-                Logout
-              </button>
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      <!--NAV-->
-      <ul class="h-75 w-100 p-3 nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/User']">
-            <button
-              type="button"
-              class="btn btn-outline-warning btn-lg btn-block"
-            >
-              Gerenciar Usuarios
-            </button>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/Movie']">
-            <button
-              type="button"
-              class="btn btn-outline-warning btn-lg btn-block"
-            >
-              Gerenciar Filmes
-            </button>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/Category']">
-            <button
-              type="button"
-              class="btn btn-outline-warning btn-lg btn-block"
-            >
-              Gerenciar Gêneros
-            </button>
-          </a>
-        </li>
-      </ul>
-    </header>
-
-    <!--CARD-->
-    <div class="card">
-      <div class="card-body text-warning">
-        <h5 class="card-title">Bem Vindo!!</h5>
-        <p class="card-text">
-          Aqui é sua area de modificação, você pode incluir, excluir, ou
-          modificar filmes e categorias. Você tambem pode gerenciar os usuarios
-          da sua plataforma!!
-        </p>
-      </div>
-
-      <img
-        class="card-img-bottom"
-        src="assets/logoADM.jpg"
-        alt="Imagem de capa do card"
-      />
+<nav class="navbar navbar-expand-lg navbar-light bg-ligth">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="assets/movies.svg" height="200" />
+    </a>
+    <div class="nav justify-content-end" id="navbarSupportedContent">
+      <a
+        class="navbar-brand button-text"
+        routerLinkActive="active"
+        (click)="logout()"
+      >
+        <button class="btn-lg btn-block" type="submit" id="menu">Logout</button>
+      </a>
     </div>
+  </div>
+</nav>
 
-    <router-outlet></router-outlet>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+<!--NAV-->
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/User']">
+      <button type="button" class="button-text btn-lg btn-block">
+        Manage Users
+      </button>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/Movie']">
+      <button type="button" class="button-text btn-lg btn-block">
+        Manage Movies
+      </button>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/Category']">
+      <button type="button" class="button-text btn-lg btn-block">
+        Manage Category
+      </button>
+    </a>
+  </li>
+</ul>
+
+<!--CARD-->
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title">Welcome!!</h2>
+    <p class="card-text">
+      Here is your modification area, you can add, delete, or modify movies and
+      categories. You can also manage your users. platform!!
+    </p>
+  </div>
+  <img
+    class="card-img-bottom"
+    src="assets/logoADM.jpg"
+    alt="Imagem de capa do card"
+  />
+</div>
+
+<router-outlet></router-outlet>

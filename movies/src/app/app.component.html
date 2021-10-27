@@ -1,3 +1,35 @@
-<div>
-  <router-outlet></router-outlet>
+<div app-theme>
+  <div class="main">
+    <header>
+      <div class="container-fluid">
+        <nav
+          class="nav nav-bar nav justify-content-end"
+          style="font-size: 1em; height: 5rem; cursor: pointer"
+        >
+          <li title="Menu">
+            <a class="nav-link" (click)="getFocus()">Menu</a>
+          </li>
+          <li class="nav-item" title="Increment font">
+            <a class="nav-link" (click)="incrementFont()">A+</a>
+          </li>
+          <li class="nav-item" title="font size">
+            <a class="nav-link" (click)="fontSize()">A</a>
+          </li>
+          <li class="nav-item" title="Decrement font">
+            <a class="nav-link" (click)="decrementFont()">A-</a>
+          </li>
+
+          <li class="nav" id="text">
+            <span>Light</span>
+            <label class="switch">
+              <input type="checkbox" (click)="toggle()" />
+              <span class="slider round"></span>
+            </label>
+            <span>Dark</span>
+          </li>
+        </nav>
+        <router-outlet></router-outlet>
+      </div>
+    </header>
+  </div>
 </div>

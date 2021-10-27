@@ -1,49 +1,42 @@
 <app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<body>
-  <link
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <div class="container">
-    <div class="row h-100 justify-content-center align-items-center">
-      <div class="card text-white bg-dark mb-3">
-        <div class="card-body">
-          <h2 class="text-center">Entrar</h2>
 
-          <form (ngSubmit)="onSubmit()" #form="ngForm">
-            <div class="form-group">
-              <label>E-mail</label>
-              <input
-                class="form-control"
-                type="email"
-                name="email"
-                id="email"
-                [(ngModel)]="login.email"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label>Senha</label>
-              <input
-                class="form-control"
-                type="password"
-                name="password"
-                id="password"
-                [(ngModel)]="login.password"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              class="btn btn-primary btn-block"
-              [disabled]="form.form.invalid"
-            >
-              Entrar
-            </button>
-          </form>
+<div class="row h-100 justify-content-center align-items-center">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h2 class="text-center">Enter</h2>
+
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+          <label>E-mail</label>
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            id="email"
+            [(ngModel)]="login.email"
+            required
+          />
         </div>
-      </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            id="password"
+            [(ngModel)]="login.password"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          [disabled]="form.form.invalid"
+        >
+          Enter
+        </button>
+      </form>
     </div>
   </div>
-</body>
+</div>
+<router-outlet></router-outlet>

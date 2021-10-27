@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './home/shared/components/navbar/navbar.component';
 import { CarouselComponent } from './home/shared/components/carousel/carousel.component';
-import { CardComponent } from './home/shared/components/card/card.component'; 
 import { AuthService } from './services/auth.service';
 import { HomeAdmComponent } from './home-adm/home-adm.component';
 
@@ -27,6 +26,10 @@ import { SaveMovieComponent } from './home-adm/movie/save-movie/save-movie.compo
 import { CategoryComponent } from './home-adm/category/category.component';
 import { NewCategoryComponent } from './home-adm/category/new-category/new-category.component';
 import { SaveCategoryComponent } from './home-adm/category/save-category/save-category.component';
+import { GenreMoviesComponent } from './home/genre-movies/genre-movies.component';
+import { ThemeModule } from './theme/theme.module';
+import { lightTheme } from './theme/light-theme';
+import { darkTheme } from './theme/dark-theme';
 
 
 @NgModule({
@@ -36,7 +39,6 @@ import { SaveCategoryComponent } from './home-adm/category/save-category/save-ca
     LoginComponent,
     NavbarComponent,
     CarouselComponent,
-    CardComponent,
     HomeAdmComponent,
     ListMoviesComponent,
     MovieComponent,
@@ -48,6 +50,7 @@ import { SaveCategoryComponent } from './home-adm/category/save-category/save-ca
     CategoryComponent,
     NewCategoryComponent,
     SaveCategoryComponent,
+    GenreMoviesComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,12 @@ import { SaveCategoryComponent } from './home-adm/category/save-category/save-ca
     BrowserAnimationsModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    ThemeModule.forRoot({
+      themes: [lightTheme, darkTheme],
+      active: 'light'
+    })
   ],
+   
   
   providers: [AuthService, httpInterceptorProviders, MovieService],
   bootstrap: [AppComponent]

@@ -1,0 +1,32 @@
+<!--NAVBAR-->
+<app-navbar></app-navbar>
+
+<div class="card" *ngFor="let category of category">
+  <div class="card-body">
+    <h5 class="card-title">
+      <input
+        class="form-control"
+        type="text"
+        name="title"
+        [(ngModel)]="category.name"
+        (input)="Search()"
+      />
+    </h5>
+    <div class="row">
+      <div class="col-sm-2" *ngFor="let movie of movie">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

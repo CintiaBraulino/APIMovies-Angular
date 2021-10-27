@@ -1,17 +1,10 @@
-body {
-  background-image: url("https://images.alphacoders.com/100/thumb-1920-1005214.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  height: 91vh;
-}
-.container,
-.row.justify-content-center.align-items-center {
-  height: 100%;
-  align-content: center;
-}
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css");
+
 .card {
   height: 370px;
   margin-top: 60px;
   max-width: 30rem;
+}
+.h2 {
+  font-size: 1em;
 }
