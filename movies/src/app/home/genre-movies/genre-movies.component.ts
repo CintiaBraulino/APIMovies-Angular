@@ -20,7 +20,7 @@ export class GenreMoviesComponent implements OnInit {
   constructor(private movieService: MovieService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.listar();
+    this.movieService.listar().subscribe((response) =>{ this.movie = response;});
     this.listCategory();
     
   }
@@ -33,15 +33,17 @@ export class GenreMoviesComponent implements OnInit {
     this.movieService.listar().subscribe(dados => this.movie = dados);
   }
 
+
   Search(){
-    
-    this.movie = this.movie.filter(res =>{
-      return res.cat.toLocaleLowerCase().match(this.cat.toLocaleLowerCase());
-    });
-     
+      if(this.cat != ""){
+        this.movie = this.movie.filter(res =>{
+          return res.cat.toLocaleLowerCase().match(this.cat.toLocaleLowerCase());
+        });
+      } else if (this.cat ==""){
+        this.ngOnInit();
+      }  
   }
 
-  
-
-
+     
 }
+
